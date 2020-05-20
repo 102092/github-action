@@ -26,3 +26,20 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build -x test
         shell: bash
+        
+      - name: Make zip file
+        run: zip -qq -r ./$GITHUB_SHA.zip .
+        shell: bash
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: $
+          aws-secret-access-key: $
+          aws-region: $
+
+      - name: Upload to S3
+        run: aws s3 cp --region us-east-1 ./$GITHUB_SHA.zip s3://airbnb11-bucket/$GITHUB_SHA.zip
+
+      - name: Code Deploy
+        run: aws deploy create-deployment --application-name deploy-app --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name airbnb11 --s3-location bucket=airbnb11-bucket,bundleType=zip,key=$GITHUB_SHA.zip
