@@ -36,6 +36,7 @@ jobs:
         with:
           aws-access-key-id: ASIAXFKCTZZILK5BZSP3
           aws-secret-access-key: 0leeK/q+WS6hFNor3yLg/QGbFxaMt7DEh0P+Nb78
+          aws-session-token: FwoGZXIvYXdzEND//////////wEaDPM1yw/y6wXegL+5FCLAAQnR2Xbfc+2TivpHpoWZFpBr8tqSL+yIjzbtDSMXmHWlu/wSCV7+22MCIL64PWXWUx6a3R6GPdiu+uRNKHGkeUTgLjLvRbjLqHrKCIhcQRQBK62H1ih3c3dfjFxxpBO6lqcLjRluJLak9T2fsT4twRktYEDlqLAyer5vxVilBOKGj4dRiqBczEunyRzvNmIg06p7gIPWQRw9Gv+ZG/GMk4ygwWOYilzBDoFsUJOGmX+Tt38AKSZD62KcVAnhl4auGijR8pT2BTIt44IWEJ3ul6+H3780zB56+GLzMGJWsGPmyleI538dg8PvoJWA0J+xrwatDzqi
           aws-region: us-east-1
 
       - name: Upload to S3
