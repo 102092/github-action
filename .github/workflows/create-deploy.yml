@@ -24,7 +24,7 @@ jobs:
         shell: bash
 
       - name: Build with Gradle
-        run: ./gradle build -x test
+        run: ./gradlew build
         shell: bash
         
       - name: Make zip file
